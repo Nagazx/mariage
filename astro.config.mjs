@@ -8,6 +8,6 @@ import react from '@astrojs/react';
 // https://astro.build/config
 export default defineConfig({
   integrations: [tailwind(), react()],
-  site: 'https://Nagazx.github.io',
-  base: 'mariage-emma-et-quentin',
+  site: 'https://nagazx.github.io',
+  base: 'docs',
 });
