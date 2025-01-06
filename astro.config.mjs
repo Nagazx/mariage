@@ -9,5 +9,5 @@ import react from '@astrojs/react';
 export default defineConfig({
   integrations: [tailwind(), react()],
   site: 'https://nagazx.github.io',
-  base: 'docs',
+  base: 'mariage',
 });
