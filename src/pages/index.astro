@@ -1,11 +1,60 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
+import Button from '../components/Button.jsx';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-	<Welcome />
+  <div class="hero" style="background-image: url('/mariage-emma-et-quentin/background.jpg');">
+    <div class="buttons">
+      <Button href="/informations">Informations sur le mariage</Button>
+      <Button href="/hebergement">Hébergement</Button>
+      <Button href="/cadeaux">Liste de cadeaux</Button>
+    </div>
+    <div class="hero-content">
+      <h1 class="fancy-text">Emma et Quentin</h1>
+      <h2 class="date-text">31.05.2025</h2>
+    </div>
+  </div>
+  <div class="additional-info">
+    <h2>Informations supplémentaires</h2>
+    <p>Ajoutez ici les informations supplémentaires que vous souhaitez afficher sous l'image de fond.</p>
+  </div>
 </Layout>
+
+<style>
+  .hero {
+    width: 100%;
+    height: auto;
+    padding-top: 56.25%; /* Ratio 16:9 (9/16 = 0.5625) */
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    filter: sepia(0.5) contrast(0.8) saturate(0) hue-rotate(-10deg);
+  }
+  .hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+  }
+  .buttons {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: flex;
+    gap: 5px;
+  }
+  .additional-info {
+    padding: 20px;
+    text-align: center;
+  }
+  .fancy-text {
+    font-family: 'Great Vibes', cursive;
+    font-size: 4rem; /* Ajustez la taille de la police selon vos besoins */
+  }
+</style>

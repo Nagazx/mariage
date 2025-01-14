@@ -1,0 +1,35 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const hebergementList = [
+  {
+    name: "Hôtel de la Plage",
+    description: "Un hôtel confortable situé à proximité de la plage, idéal pour se détendre.",
+    link: "https://www.hoteldelaplage.com"
+  },
+  {
+    name: "Château de la Rivière",
+    description: "Un magnifique château offrant des chambres élégantes et un cadre romantique.",
+    link: "https://www.chateaudelariviere.com"
+  },
+  {
+    name: "Auberge du Parc",
+    description: "Une auberge charmante avec une ambiance chaleureuse et des repas faits maison.",
+    link: "https://www.aubergeduparc.com"
+  }
+];
+
+---
+
+<Layout>
+  <h1>Hébergement</h1>
+  <ul>
+    {hebergementList.map((hebergement) => (
+      <li>
+        <h2>{hebergement.name}</h2>
+        <p>{hebergement.description}</p>
+        <a href={hebergement.link} target="_blank">Plus d'infos</a>
+      </li>
+    ))}
+  </ul>
+</Layout>
