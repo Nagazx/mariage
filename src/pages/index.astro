@@ -1,18 +1,26 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Button from '../components/Button.jsx';
-
+import ButtonLink from '../components/ButtonLink.jsx';
+import NavBarDrawer from '../components/NavBarDrawer.jsx';
 ---
 
 <Layout>
-  <div class="hero" style="background-image: url('/mariage-emma-et-quentin/background.jpg');">
+  <div class="hero bg-no-repeat bg-cover bg-center
+		bg-[url('/mariage-emma-et-quentin/background-mobile.jpeg')]
+		md:bg-none
+		xl:bg-[url('/mariage-emma-et-quentin/background-desktop.jpeg')]">
     <div class="buttons">
-      <Button href="/informations">Informations sur le mariage</Button>
-      <Button href="/hebergement">Hébergement</Button>
-      <Button href="/cadeaux">Liste de cadeaux</Button>
+      <NavBarDrawer />
     </div>
-    <div class="hero-content">
-      <h1 class="fancy-text">Emma et Quentin</h1>
+      {/**
+       
+      <ButtonLink href="/informations">Informations</ButtonLink>
+      <ButtonLink href="/hebergement">Hébergement</ButtonLink>
+      <ButtonLink href="/cadeaux">Liste de cadeaux</ButtonLink>
+      */}
+
+    <div class="hero-content align-center">
+      <h1 class="fancy-text">Emma & Quentin</h1>
       <h2 class="date-text">31.05.2025</h2>
     </div>
   </div>
@@ -25,22 +33,20 @@ import Button from '../components/Button.jsx';
 <style>
   .hero {
     width: 100%;
-    height: auto;
-    padding-top: 56.25%; /* Ratio 16:9 (9/16 = 0.5625) */
-    position: relative;
-    background-size: cover;
-    background-position: center;
-    filter: sepia(0.5) contrast(0.8) saturate(0) hue-rotate(-10deg);
+    height: 100%;
   }
   .hero-content {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-110%, -70%);
     padding: 20px;
     border-radius: 10px;
     color: white;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   .buttons {
     position: absolute;
@@ -49,12 +55,30 @@ import Button from '../components/Button.jsx';
     display: flex;
     gap: 5px;
   }
+  .drawer {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
   .additional-info {
     padding: 20px;
     text-align: center;
   }
   .fancy-text {
     font-family: 'Great Vibes', cursive;
-    font-size: 4rem; /* Ajustez la taille de la police selon vos besoins */
+    font-size: 3rem; /* Ajustez la taille de la police selon vos besoins */
+  }
+  .date-text {
+    font-family: 'Great Vibes', cursive;
+    font-size: 1.5rem; /* Ajustez la taille de la police selon vos besoins */
+  }
+
+  @media (min-width: 768px) {
+    .fancy-text {
+      font-size: 6rem; /* Taille pour desktop */
+    }
+    .date-text {
+      font-size: 3rem; /* Taille pour desktop */
+    }
   }
 </style>
