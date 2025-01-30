@@ -3,33 +3,98 @@ import Layout from '../layouts/Layout.astro';
 
 const hebergementList = [
   {
-    name: "Hôtel de la Plage",
-    description: "Un hôtel confortable situé à proximité de la plage, idéal pour se détendre.",
-    link: "https://www.hoteldelaplage.com"
-  },
-  {
-    name: "Château de la Rivière",
-    description: "Un magnifique château offrant des chambres élégantes et un cadre romantique.",
-    link: "https://www.chateaudelariviere.com"
+    name: "Hôtel de la Gare",
+    description: "Un hôtel confortable situé près de la gare avec des chambres modernes.",
+    link: "https://www.hoteldelagare.com"
   },
   {
     name: "Auberge du Parc",
     description: "Une auberge charmante avec une ambiance chaleureuse et des repas faits maison.",
     link: "https://www.aubergeduparc.com"
+  },
+  {
+    name: "Château de Pujaut",
+    description: "Un magnifique château offrant des chambres luxueuses et une vue imprenable.",
+    link: "https://www.chateaudePujaut.com"
   }
 ];
-
 ---
 
 <Layout>
-  <h1>Hébergement</h1>
-  <ul>
+  <div class="hero
+        bg-[url('/mariage-emma-et-quentin/background-hebergement-mobile.jpeg')]
+        xl:bg-[url('/mariage-emma-et-quentin/background-hebergement-desktop.jpeg')]">
+    <div class="hero-content">
+      <h1 class="fancy-text">Hébergement</h1>
+    </div>
+  </div>
+  <div class="intro-text">
+    <p>Bienvenue sur notre page d'hébergement. Nous avons sélectionné pour vous une liste de logements disponibles à Pujaut et ses environs pour que vous puissiez profiter pleinement de notre mariage.</p>
+  </div>
+  <ul class="hebergement-list">
     {hebergementList.map((hebergement) => (
-      <li>
+      <li class="hebergement-item">
         <h2>{hebergement.name}</h2>
         <p>{hebergement.description}</p>
-        <a href={hebergement.link} target="_blank">Plus d'infos</a>
+        <a href={hebergement.link} target="_blank" class="info-link">Plus d'infos</a>
       </li>
     ))}
   </ul>
 </Layout>
+
+<style>
+  .hero {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 300px;
+  }
+  .hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+  }
+  .fancy-text {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.5rem; /* Taille par défaut pour mobile */
+  }
+  .intro-text {
+    padding: 20px;
+    text-align: center;
+    font-size: 1.2rem;
+  }
+  .hebergement-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px auto;
+    max-width: 800px;
+  }
+  .hebergement-item {
+    background: #f9f9f9;
+    margin: 10px 0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  .hebergement-item h2 {
+    margin: 0 0 10px;
+    font-size: 1.5rem;
+  }
+  .hebergement-item p {
+    margin: 0 0 10px;
+  }
+  .info-link {
+    color: #007BFF;
+    text-decoration: none;
+  }
+  .info-link:hover {
+    text-decoration: underline;
+  }
+</style>

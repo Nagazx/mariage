@@ -1,0 +1,86 @@
+---
+import Layout from '../layouts/Layout.astro';
+import emailjs from '@emailjs/browser';
+
+---
+
+<Layout>
+    <div class="hero bg-base-200 min-h-screen">
+        <div class="hero-content flex-col lg:flex-row-reverse">
+            <div class="text-center lg:text-left">
+                <h1 class="text-5xl font-bold">Confirme ta présence maintenant</h1>
+                <p class="py-6">
+                    Répondez à ces quelques questions pour confirmer votre présence
+                </p>
+            </div>
+            <div class="card bg-base-100 w-full max-w-md shrink-0 shadow-2xl">
+                <form id="rsvp-form" class="card-body">
+                    <div class="form-control">
+                        <label class="label">
+                            <span class="label-text">Je confirme ma / notre présence </span>
+                        </label>
+                        <div class="flex flex-row form-control">
+                        <div class="form-control grid grid-cols-2">
+                            <label class="label cursor-pointer col-span-1 gap-4"> 
+                            <span class="label-text">Oui</span>
+                            <input type="radio" name="presence" value="oui" class="radio checked:bg-brown-500" checked="checked" />
+                            </label>
+                        </div>
+                        <div class="form-control">
+                            <label class="label cursor-pointer col-span-1 gap-4">
+                            <span class="label-text">Non</span>
+                            <input type="radio" name="presence" value="non" class="radio checked:bg-brown-500"/>
+                            </label>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="form-control">
+                        <label class="label">
+                            <span class="label-text">Nom de famille</span>
+                        </label>
+                        <input name="nom" type="text" placeholder="Nom" class="input input-bordered" required />
+                    </div>
+                    <div class="form-control">
+                        <label class="label">
+                            <span class="label-text">Prénoms</span>
+                        </label>
+                        <input name="prenom" type="text" placeholder="Prénoms" class="input input-bordered" required />
+                    </div>
+                    <div class="form-control">
+                        <label class="label">
+                            <span class="label-text">Restrictions alimentaires</span>
+                        </label>
+                        <input name="restriction" type="text" placeholder="Sans gluten" class="input input-bordered" />
+                    </div>
+                    <div class="form-control">
+                        <label class="label">
+                            <span class="label-text">Requêtes supplémentaires</span>
+                        </label>
+                        <textarea name="autre" placeholder="Requêtes supplémentaires" class="textarea textarea-bordered"></textarea>
+                    </div>
+                    <div class="form-control mt-6">
+                        <button type="submit" class="btn btn-primary" >Envoyer</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init("7cWYpjBeYL5RnjLmu");
+        })();
+
+        document.getElementById('rsvp-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            emailjs.sendForm('service_nvi4jno', 'template_5n74b0l', this)
+                .then(function(response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                    alert('Votre réponse a été envoyée avec succès!');
+                }, function(error) {
+                    console.log('FAILED...', error);
+                    alert('Une erreur est survenue lors de l\'envoi de votre réponse.');
+                });
+        });
+    </script>
+</Layout>

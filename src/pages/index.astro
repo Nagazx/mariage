@@ -1,64 +1,26 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import ButtonLink from '../components/ButtonLink.jsx';
-import NavBarDrawer from '../components/NavBarDrawer.jsx';
 ---
 
 <Layout>
-  <div class="hero bg-no-repeat bg-cover bg-center
+  <div class="hero min-h-screen
 		bg-[url('/mariage-emma-et-quentin/background-mobile.jpeg')]
-		md:bg-none
+    md:bg-[url('/mariage-emma-et-quentin/background-desktop.jpeg')]
 		xl:bg-[url('/mariage-emma-et-quentin/background-desktop.jpeg')]">
-    <div class="buttons">
-      <NavBarDrawer />
+    <div class="hero-overlay bg-opacity-10"></div>
+    <div class="hero-content text-white text-center">
+      <div class="max-w-1g ">
+        <h1 class="fancy-text mb-5 text-5xl">Emma & Quentin</h1>
+        <p class="date-text mb-5">Mariage - 31.05.2025</p>
+      </div>
     </div>
-      {/**
-       
-      <ButtonLink href="/informations">Informations</ButtonLink>
-      <ButtonLink href="/hebergement">Hébergement</ButtonLink>
-      <ButtonLink href="/cadeaux">Liste de cadeaux</ButtonLink>
-      */}
-
-    <div class="hero-content align-center">
-      <h1 class="fancy-text">Emma & Quentin</h1>
-      <h2 class="date-text">31.05.2025</h2>
-    </div>
-  </div>
-  <div class="additional-info">
-    <h2>Informations supplémentaires</h2>
-    <p>Ajoutez ici les informations supplémentaires que vous souhaitez afficher sous l'image de fond.</p>
   </div>
 </Layout>
 
 <style>
-  .hero {
-    width: 100%;
-    height: 100%;
-  }
   .hero-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-110%, -70%);
-    padding: 20px;
-    border-radius: 10px;
-    color: white;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .buttons {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    display: flex;
-    gap: 5px;
-  }
-  .drawer {
-    position: absolute;
-    top: 10px;
-    right: 10px;
+    padding-left: 10%;
+    justify-self: left;
   }
   .additional-info {
     padding: 20px;
@@ -75,10 +37,10 @@ import NavBarDrawer from '../components/NavBarDrawer.jsx';
 
   @media (min-width: 768px) {
     .fancy-text {
-      font-size: 6rem; /* Taille pour desktop */
+      font-size: 5rem; /* Taille pour desktop */
     }
     .date-text {
-      font-size: 3rem; /* Taille pour desktop */
+      font-size: 2.5rem; /* Taille pour desktop */
     }
   }
 </style>

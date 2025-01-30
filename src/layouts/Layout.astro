@@ -1,23 +1,44 @@
+---
+import NavBarDrawer from "../components/NavBarDrawer";
+---
+
 <!doctype html>
-<html lang="fr">
+<html data-theme="terracota" lang="fr">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/svg+xml" href="/mariage-emma-et-quentin/favicon.png" />
 		<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
 		<meta name="generator" content={Astro.generator} />
 		<title>Mariage E&Q</title>
 	</head>
 	<body>
-		<slot />
+        <main>
+			<div id="navbar" class="navbar">
+            	<NavBarDrawer />
+			</div>
+            <slot />
+        </main>
 	</body>
 </html>
 
 <style>
+	
 	html,
 	body {
 		margin: 0;
 		width: 100%;
 		height: 100%;
 	}
+    .navbar {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        background: transparent;
+        transition: background-color 0.3s ease;
+        z-index: 10; /* Assurez-vous que la barre de navigation est au-dessus du contenu */
+    }
+    .navbar.scrolled {
+        background: rgba(0, 0, 0, 0.8); /* Fond semi-transparent lorsqu'on défile */
+    }
 </style>
