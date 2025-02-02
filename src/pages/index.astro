@@ -4,23 +4,33 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout>
   <div class="hero min-h-screen
-		bg-[url('/mariage-emma-et-quentin/background-mobile.jpeg')]
-    md:bg-[url('/mariage-emma-et-quentin/background-desktop.jpeg')]
-		xl:bg-[url('/mariage-emma-et-quentin/background-desktop.jpeg')]">
+		bg-[url('/mariage-emma-et-quentin/background-mobile.JPG')]
+		lg:bg-[url('/mariage-emma-et-quentin/background-desktop.jpeg')]">
     <div class="hero-overlay bg-opacity-10"></div>
-    <div class="hero-content text-white text-center">
+    <div class="hero-content-d text-white text-center hidden lg:flex">
       <div class="max-w-1g ">
         <h1 class="fancy-text mb-5 text-5xl">Emma & Quentin</h1>
         <p class="date-text mb-5">Mariage - 31.05.2025</p>
       </div>
     </div>
+    <div class="hero-content-m text-white text-center lg:hidden">
+      <div class="max-w-1g ">
+        <h1 class="fancy-text mb-5 text-5xl">Emma & Quentin</h1>
+        <p class="date-text mb-5">Mariage - 31.05.2025</p>
+      </div>
+    </div>
+
   </div>
 </Layout>
 
 <style>
-  .hero-content {
+  .hero-content-d {
     padding-left: 10%;
     justify-self: left;
+  }
+  .hero-content-m {
+    padding-top: 20%;
+    align-self: self-start;
   }
   .additional-info {
     padding: 20px;
@@ -35,7 +45,7 @@ import Layout from '../layouts/Layout.astro';
     font-size: 1.5rem; /* Ajustez la taille de la police selon vos besoins */
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     .fancy-text {
       font-size: 5rem; /* Taille pour desktop */
     }
