@@ -11,7 +11,21 @@ export default {
 		},
 	},
 	daisyui: {
-		themes: ["autumn"],
+		themes: [
+			{
+			  terracotta: {
+				"primary": "#E8C6A7",
+				"secondary": "#D88C74",
+				"accent": "#B56557",
+				"neutral": "#5A3E36",
+				"base-100": "#FFFFFF",
+				"info": "#3B82F6",
+				"success": "#2E7D32",
+				"warning": "#E9C46A",
+				"error": "#D72638",
+			  },
+			},
+		  ],
 	},
 	plugins: [require('daisyui')],
 }

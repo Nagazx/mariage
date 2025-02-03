@@ -1,8 +1,42 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import GiftList from '../components/GiftList.jsx';
 ---
 
 <Layout>
-  <GiftList />
+  <div class="hero bg-gradient-to-b from-primary to-secondary min-h-screen p-8 text-base-100 mt-30 flex flex-col items-center relative overflow-hidden">
+    {/* Décorations */}
+    <div class="absolute top-10 left-5 w-32 h-32 bg-accent opacity-30 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-10 right-5 w-40 h-40 bg-secondary opacity-30 rounded-full blur-3xl"></div>
+    
+    <h1 class="text-5xl font-extrabold mb-8 text-center relative z-10">Liste de Mariage</h1>
+    
+    <div class="max-w-3xl w-full bg-base-100 text-neutral p-10 rounded-xl shadow-2xl text-left relative z-10">
+      <div class="flex flex-col md:flex-row md:items-center md:space-x-6">
+        <p class="text-lg leading-relaxed flex-1">
+          Pour ceux qui souhaitent nous offrir un cadeau ou une participation financière,
+          nous avons créé une liste de mariage sur <strong>MilleMerciMariage</strong>.
+        </p>
+        <div class="md:w-1/3 text-center md:text-right">
+          <a 
+            href="https://www.millemercimariage.com" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="btn btn-secondary text-lg px-6 py-3 rounded-full shadow-md">
+            Accéder à la liste de mariage
+          </a>
+        </div>
+      </div>
+      
+      <p class="mt-8 text-lg text-center">
+        Une urne sera également mise à disposition le jour du mariage pour ceux qui
+        préfèrent offrir leur participation en main propre.
+      </p>
+    </div>
+  </div>
 </Layout>
+
+<style>
+  .hero {
+    padding-top: 100px;
+  }
+</style>
