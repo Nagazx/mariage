@@ -23,17 +23,17 @@ const NavBarDrawer = () => {
                     tabIndex={0}
                     className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
                     <li><a href={`${base}/informations`}>Informations</a></li>
-                    <li><a href={`${base}/cadeaux`}>Liste de mariage</a></li>
+                    <li><a href={`${base}/liste`}>Liste de mariage</a></li>
                     <li><a href={`${base}/hebergement`}>Hebergement</a></li>
                     <li><a href={`${base}/contact`}>Contact</a></li>
                 </ul>
                 </div>
-                <a href={`${base}`} className="btn btn-ghost text-xl">E&Q</a>
+                <a href={`${base}`} className="btn btn-ghost text-xl" style={{fontFamily: "Great Vibes, cursive"}}>E&Q</a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
                     <li><a href={`${base}/informations`}>Informations</a></li>
-                    <li><a href={`${base}/cadeaux`}>Liste de mariage</a></li>
+                    <li><a href={`${base}/liste`}>Liste de mariage</a></li>
                     <li><a href={`${base}/hebergement`}>Hebergement</a></li>
                     <li><a href={`${base}/contact`}>Contact</a></li>
                 </ul>
