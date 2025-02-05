@@ -5,25 +5,44 @@ const hebergementList = [
   {
     name: "Hôtel de la Gare",
     description: "Un hôtel confortable situé près de la gare avec des chambres modernes.",
-    link: "https://www.hoteldelagare.com"
+    link: "https://www.hoteldelagare.com",
+    image: "/mariage-emma-et-quentin/hotel-gare.jpg"
   },
   {
     name: "Auberge du Parc",
     description: "Une auberge charmante avec une ambiance chaleureuse et des repas faits maison.",
-    link: "https://www.aubergeduparc.com"
+    link: "https://www.aubergeduparc.com",
+    image: "/mariage-emma-et-quentin/auberge-parc.jpg"
   },
   {
     name: "Château de Pujaut",
     description: "Un magnifique château offrant des chambres luxueuses et une vue imprenable.",
-    link: "https://www.chateaudePujaut.com"
+    link: "https://www.chateaudePujaut.com",
+    image: "/mariage-emma-et-quentin/chateau-pujaut.jpg"
+  },
+  {
+    name: "Hôtel de la Gare",
+    description: "Un hôtel confortable situé près de la gare avec des chambres modernes.",
+    link: "https://www.hoteldelagare.com",
+    image: "/mariage-emma-et-quentin/hotel-gare.jpg"
+  },
+  {
+    name: "Auberge du Parc",
+    description: "Une auberge charmante avec une ambiance chaleureuse et des repas faits maison.",
+    link: "https://www.aubergeduparc.com",
+    image: "/mariage-emma-et-quentin/auberge-parc.jpg"
+  },
+  {
+    name: "Château de Pujaut",
+    description: "Un magnifique château offrant des chambres luxueuses et une vue imprenable.",
+    link: "https://www.chateaudePujaut.com",
+    image: "/mariage-emma-et-quentin/chateau-pujaut.jpg"
   }
 ];
 ---
 
 <Layout>
-  <div class="hero
-        bg-[url('/mariage-emma-et-quentin/background-hebergement-mobile.jpeg')]
-        xl:bg-[url('/mariage-emma-et-quentin/background-hebergement-desktop.jpeg')]">
+  <div class="hero bg-[url('/mariage-emma-et-quentin/background-hebergement-mobile.jpeg')] xl:bg-[url('/mariage-emma-et-quentin/background-hebergement-desktop.jpeg')]">
     <div class="hero-content">
       <h1 class="fancy-text">Hébergement</h1>
     </div>
@@ -31,15 +50,18 @@ const hebergementList = [
   <div class="intro-text">
     <p>Bienvenue sur notre page d'hébergement. Nous avons sélectionné pour vous une liste de logements disponibles à Pujaut et ses environs pour que vous puissiez profiter pleinement de notre mariage.</p>
   </div>
-  <ul class="hebergement-list">
+  <div class="hebergement-grid">
     {hebergementList.map((hebergement) => (
-      <li class="hebergement-item">
-        <h2>{hebergement.name}</h2>
-        <p>{hebergement.description}</p>
-        <a href={hebergement.link} target="_blank" class="info-link">Plus d'infos</a>
-      </li>
+      <div class="hebergement-card">
+        <img src={hebergement.image} alt={hebergement.name} class="hebergement-image" />
+        <div class="hebergement-content">
+          <h2>{hebergement.name}</h2>
+          <p>{hebergement.description}</p>
+          <a href={hebergement.link} target="_blank" class="info-link">Plus d'infos</a>
+        </div>
+      </div>
     ))}
-  </ul>
+  </div>
 </Layout>
 
 <style>
@@ -63,38 +85,57 @@ const hebergementList = [
   }
   .fancy-text {
     font-family: 'Great Vibes', cursive;
-    font-size: 2.5rem; /* Taille par défaut pour mobile */
+    font-size: 2.5rem;
   }
   .intro-text {
     padding: 20px;
     text-align: center;
     font-size: 1.2rem;
   }
-  .hebergement-list {
-    list-style: none;
-    padding: 0;
-    margin: 20px auto;
-    max-width: 800px;
-  }
-  .hebergement-item {
-    background: #f9f9f9;
-    margin: 10px 0;
+  .hebergement-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
     padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  .hebergement-card {
+    background: #fff;
     border-radius: 10px;
+    overflow: hidden;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
   }
-  .hebergement-item h2 {
-    margin: 0 0 10px;
+  .hebergement-card:hover {
+    transform: scale(1.05);
+  }
+  .hebergement-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  .hebergement-content {
+    padding: 15px;
+  }
+  .hebergement-content h2 {
     font-size: 1.5rem;
+    margin-bottom: 10px;
   }
-  .hebergement-item p {
-    margin: 0 0 10px;
+  .hebergement-content p {
+    font-size: 1rem;
+    margin-bottom: 10px;
   }
   .info-link {
-    color: #007BFF;
+    display: inline-block;
+    padding: 8px 12px;
+    background-color: #d87c5f;
+    color: white;
+    border-radius: 5px;
     text-decoration: none;
+    transition: background 0.3s;
   }
   .info-link:hover {
-    text-decoration: underline;
+    background-color: #c4684d;
   }
 </style>
