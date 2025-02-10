@@ -25,7 +25,6 @@ const NavBarDrawer = () => {
                     <li><a href={`${base}/informations`}>Informations</a></li>
                     <li><a href={`${base}/liste`}>Liste de mariage</a></li>
                     <li><a href={`${base}/hebergement`}>Hebergement</a></li>
-                    <li><a href={`${base}/contact`}>Contact</a></li>
                 </ul>
                 </div>
                 <a href={`${base}`} className="btn btn-ghost text-xl" style={{fontFamily: "Great Vibes, cursive"}}>E&Q</a>
@@ -35,7 +34,6 @@ const NavBarDrawer = () => {
                     <li><a href={`${base}/informations`}>Informations</a></li>
                     <li><a href={`${base}/liste`}>Liste de mariage</a></li>
                     <li><a href={`${base}/hebergement`}>Hebergement</a></li>
-                    <li><a href={`${base}/contact`}>Contact</a></li>
                 </ul>
             </div>
             <div className="navbar-end">
