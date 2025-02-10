@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
+const apiKey = import.meta.env.GOOGLE_MAPS_API_KEY;
 ---
 
 <Layout>
@@ -12,6 +13,16 @@ import Layout from '../layouts/Layout.astro';
       <div class="bg-base-100 text-neutral p-6 rounded-lg shadow-lg">
         <h2 class="text-2xl font-bold text-primary">Messe de mariage</h2>
         <p class="mt-2">Nous sommes heureux de vous convier à la messe de notre mariage le <strong>samedi 31 mai 2025 à 15h30</strong> à l’église de la Nativité de Marie de Graveson.</p>
+        <p class="mt-2 font-semibold">Adresse :</p>
+        <p>1 Pl. de l'Église, 13690 Graveson, France</p>
+        <details class="collapse mt-4 bg-gray-100 p-4 rounded-lg">
+          <summary class="cursor-pointer text-primary font-semibold">Voir la carte</summary>
+          <iframe 
+            class="w-full h-64 mt-2 rounded-lg"
+            src=`https://www.google.com/maps/embed/v1/place?q=1+Pl.+de+l'Église,+13690+Graveson,+France&key=${apiKey}`
+            allowfullscreen>
+          </iframe>
+        </details>
         <div class="mt-4">
           <h3 class="font-semibold">Informations pratiques :</h3>
           <ul class="list-disc pl-6">
@@ -25,14 +36,24 @@ import Layout from '../layouts/Layout.astro';
       {/* Réception */}
       <div class="bg-base-100 text-neutral p-6 rounded-lg shadow-lg">
         <h2 class="text-2xl font-bold text-primary">Réception</h2>
-        <p class="mt-2">A la suite de la messe, les invités sont attendus pour le cocktail <strong> à 18h </strong> à La Ferme Saint Hugues de Pujaut.</p>
+        <p class="mt-2">À la suite de la messe, les invités sont attendus pour le vin d'honneur <strong>à 18h</strong> à La Ferme Saint Hugues de Pujaut.</p>
+        <p class="mt-2 font-semibold">Adresse :</p>
+        <p>984 Chem. de Saint-Hugues, 30131 Pujaut, France</p>
+        <details class="collapse mt-4 bg-gray-100 p-4 rounded-lg">
+          <summary class="cursor-pointer text-primary font-semibold">Voir la carte</summary>
+          <iframe 
+            class="w-full h-64 mt-2 rounded-lg"
+            src=`https://www.google.com/maps/embed/v1/place?q=984+Chem.+de+Saint-Hugues,+30131+Pujaut,+France&key=${apiKey}`
+            allowfullscreen>
+          </iframe>
+        </details>
         <div class="mt-4">
           <h3 class="font-semibold">Informations pratiques :</h3>
           <ul class="list-disc pl-6">
             <li>La Ferme Saint Hugues se situe à 30 minutes en voiture de l’église de Graveson.</li>
-            <li>Le lieu de réception possède un parking suffisement grand</li>
+            <li>Le lieu de réception possède un parking suffisamment grand.</li>
             <li>Un rafraîchissement vous sera offert à votre arrivée, suivi du vin d'honneur.</li>
-            <li>Le cocktail durera environ 2 heures.</li>
+            <li>Le vin d'honneur durera environ 2 heures.</li>
           </ul>
         </div>
         <img src="/mariage-emma-et-quentin/vignes-pujaut.jpg" alt="Lieu de réception" class="w-full mt-4 rounded-lg" />
